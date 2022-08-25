@@ -239,7 +239,7 @@ const array = [];
           <div className="custom-scrollbar overflow-auto max-h-[95%] p-10 flex flex-col col-span-10">
             <div className={"h-16 flex items-center justify-between  mb-4"}>
               <div className="pb-2">
-                <p className="font-semibold text-gray-800">Quiz Detail</p>
+                <p className="font-semibold text-gray-800">Quiz Details</p>
               </div>
               <div className="flex flex-row justify-between">
                 <button
@@ -305,11 +305,11 @@ const array = [];
                     Subscription Type
                   </p>
                   <select
-                    value={quizzesSet.premium ? 'premium' : 'free'}
+                    value={quizzesSet.premium == true ? "premium" : "free"}
                     onChange={(e) =>
                       setQuizzesSet((quizzesSet) => ({
                         ...quizzesSet,
-                        subscriptionType: e.target.value,
+                        premium: e.target.value == "free" ? false : true,
                       }))
                     }
                     type="text"
@@ -324,7 +324,6 @@ const array = [];
                     <p className="mb-2 font-semibold text-gray-700">
                       Questions
                     </p>
-
 
                     <button
                       onClick={() => {
