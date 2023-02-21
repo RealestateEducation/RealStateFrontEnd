@@ -55,7 +55,7 @@ export default function Dashboard() {
                     Users
                   </p>
                   <p className={"text-5xl font-bold text-buttercup-800"}>
-                    {usersReports.totalUsers}
+                    {usersReports?.totalUsers}
                   </p>
                 </div>
               </div>
@@ -67,7 +67,7 @@ export default function Dashboard() {
                     Flash Cards
                   </p>
                   <p className={"text-5xl font-bold text-french-rose-800"}>
-                    {usersReports.inActiveUsers}
+                    {usersReports?.inActiveUsers}
                   </p>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export default function Dashboard() {
                     Vocabulary
                   </p>
                   <p className={"text-5xl font-bold text-cornflower-blue-800"}>
-                    {usersReports.activeUsers}
+                    {usersReports?.activeUsers}
                   </p>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function Dashboard() {
                     Quizzes
                   </p>
                   <p className={"text-5xl font-bold text-mountain-meadow-800"}>
-                    {usersReports.newUsers}
+                    {usersReports?.newUsers}
                   </p>
                 </div>
               </div>

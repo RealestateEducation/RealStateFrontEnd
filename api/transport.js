@@ -1,7 +1,8 @@
 import axios from "axios";
 import axiosRetry from "axios-retry";
 
-const baseUrl = "https://ik491x7anc.execute-api.us-east-2.amazonaws.com/dev/";
+// const baseUrl = "https://ik491x7anc.execute-api.us-east-2.amazonaws.com/dev/";
+const baseUrl = "/";
 axiosRetry(axios, { retries: 10 });
 
 const Transport = {
@@ -53,7 +54,7 @@ const Transport = {
     // quizes
     getQuizesSet: (token) =>
       axios({
-        url: 'https://realestateeducation.herokuapp.com/api/quiz',
+        url: 'https://new-app-001.herokuapp.com/api/quiz',
         method: "GET",
         headers: {
           authorization: "Bearer " + token,
@@ -80,7 +81,7 @@ const Transport = {
     // flashcard
     addFlashcardSet: (data, token) =>
       axios({
-        url: "https://realestateeducation.herokuapp.com/api/set/",
+        url: "https://new-app-001.herokuapp.com/api/set/",
         method: "POST",
         data,
         headers: {
@@ -90,7 +91,7 @@ const Transport = {
 
     getFlashcardSet: (token) =>
       axios({
-        url: "https://realestateeducation.herokuapp.com/api/set?subject=cards",
+        url: "https://new-app-001.herokuapp.com/api/set?subject=cards",
         method: "GET",
         headers: {
           authorization: "Bearer " + token,
@@ -98,7 +99,7 @@ const Transport = {
       }),
     getVocabularySet: (token) =>
       axios({
-        url: "https://realestateeducation.herokuapp.com/api/set?subject=vocabulary",
+        url: "https://new-app-001.herokuapp.com/api/set?subject=vocabulary",
         method: "GET",
         headers: {
           authorization: "Bearer " + token,
@@ -106,7 +107,7 @@ const Transport = {
       }),
     getFlashcardSetById: (id, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/set/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/set/${id}`,
         method: "GET",
         headers: {
           authorization: "Bearer " + token,
@@ -114,7 +115,7 @@ const Transport = {
       }),
     updateFlashcardSet: (id, data, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/set/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/set/${id}`,
         method: "PATCH",
         data,
         headers: {
@@ -124,7 +125,7 @@ const Transport = {
 
     createCards: (data, token) =>
       axios({
-        url: "https://realestateeducation.herokuapp.com/api/card",
+        url: "https://new-app-001.herokuapp.com/api/card",
         method: "POST",
         data,
         headers: {
@@ -134,7 +135,7 @@ const Transport = {
 
     updateCard: (id, data, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/card/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/card/${id}`,
         method: "PATCH",
         data,
         headers: {
@@ -143,7 +144,7 @@ const Transport = {
       }),
     deleteSingleCard: (id, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/card/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/card/${id}`,
         method: "DELETE",
         headers: {
           authorization: "Bearer " + token,
@@ -152,7 +153,7 @@ const Transport = {
 
     deleteManyCards: (setId, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/card?setId=${setId}`,
+        url: `https://new-app-001.herokuapp.com/api/card?setId=${setId}`,
         method: "DELETE",
         headers: {
           authorization: "Bearer " + token,
@@ -161,7 +162,7 @@ const Transport = {
 
     deleteFlashcardSet: (id, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/set/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/set/${id}`,
         method: "DELETE",
         headers: {
           authorization: "Bearer " + token,
@@ -169,7 +170,7 @@ const Transport = {
       }),
     getCardsBySetId: (id, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/card?setId=${id}&limit=500`,
+        url: `https://new-app-001.herokuapp.com/api/card?setId=${id}&limit=500`,
         method: "GET",
         headers: {
           authorization: "Bearer " + token,
@@ -180,13 +181,13 @@ const Transport = {
 
     getQuestions: (subject) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/question?subject=${subject}&limit=500`,
+        url: `https://new-app-001.herokuapp.com/api/question?subject=${subject}&limit=500`,
         method: "GET",
       }),
 
     createQuestion: (data, token) =>
       axios({
-        url: "https://realestateeducation.herokuapp.com/api/question/",
+        url: "https://new-app-001.herokuapp.com/api/question/",
         method: "POST",
         data,
         headers: {
@@ -195,7 +196,7 @@ const Transport = {
       }),
     deleteQuestion: (id, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/question/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/question/${id}`,
         method: "DELETE",
         headers: {
           authorization: "Bearer " + token,
@@ -204,13 +205,13 @@ const Transport = {
 
     updateQuestion: (data) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/question/${data.id}`,
+        url: `https://new-app-001.herokuapp.com/api/question/${data.id}`,
         method: "PATCH",
         data,
       }),
     deleteManyQuestions: (data) =>
       axios({
-        url: 'https://realestateeducation.herokuapp.com/api/question',
+        url: 'https://new-app-001.herokuapp.com/api/question',
         method: "DELETE",
         data
       }),
@@ -218,7 +219,7 @@ const Transport = {
     // Quizes
     addQuizzesSet: (data, token) =>
       axios({
-        url: 'https://realestateeducation.herokuapp.com/api/quiz',
+        url: 'https://new-app-001.herokuapp.com/api/quiz',
         method: "POST",
         data,
         headers: {
@@ -236,7 +237,7 @@ const Transport = {
       }),
     getQuizzesSetById: (id, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/quiz/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/quiz/${id}`,
         method: "GET",
         headers: {
           authorization: "Bearer " + token,
@@ -244,7 +245,7 @@ const Transport = {
       }),
     updateQuizzesSet: (id, data, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/quiz/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/quiz/${id}`,
         method: "PATCH",
         data,
         headers: {
@@ -254,7 +255,7 @@ const Transport = {
 
     deleteQuizzesSet: (id, token) =>
       axios({
-        url: `https://realestateeducation.herokuapp.com/api/quiz/${id}`,
+        url: `https://new-app-001.herokuapp.com/api/quiz/${id}`,
         method: "DELETE",
         headers: {
           authorization: "Bearer " + token,
@@ -331,7 +332,7 @@ const Transport = {
       }),
     getUsersReport: (token) =>
       axios({
-        url: baseUrl + `analytics/get-reports`,
+        url: baseUrl + ``,
         method: "GET",
         headers: {
           authorization: "Bearer " + token,
